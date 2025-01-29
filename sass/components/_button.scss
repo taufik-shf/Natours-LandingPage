@@ -1,3 +1,6 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
 .btn {
   &,
   &:link,
@@ -5,7 +8,7 @@
     position: relative;
     display: inline-block;
     font-weight: 500;
-    font-size: $default-font;
+    font-size: variables.$default-font;
     text-transform: uppercase;
     padding: 1.5rem 4rem;
     border-radius: 10rem;
@@ -13,41 +16,41 @@
     border: none;
     cursor: pointer;
 
-    @include respond(tab-land) {
+    @include mixins.respond(tab-land) {
       padding: 1rem 3rem;
     }
   }
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    box-shadow: 0 1rem 2rem rgba(variables.$color-black, 0.2);
   }
 
   &:active,
   &:focus {
     transform: translateY(-1px);
-    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(variables.$color-black, 0.2);
     outline: none;
   }
 
   &--white {
-    background-color: $color-white;
-    color: $color-grey-dark;
+    background-color: variables.$color-white;
+    color: variables.$color-grey-dark;
     letter-spacing: 2px;
 
     &::after {
       content: "";
-      background-color: $color-white;
+      background-color: variables.$color-white;
     }
   }
 
   &--blue {
-    background-color: $color-primary;
-    color: $color-white;
+    background-color: variables.$color-primary;
+    color: variables.$color-white;
 
     &::after {
       content: "";
-      background-color: $color-primary;
+      background-color: variables.$color-primary;
     }
   }
 
@@ -79,22 +82,22 @@
   &:link,
   &:visited {
     display: inline-block;
-    color: $color-primary;
-    font-size: $default-font;
+    color: variables.$color-primary;
+    font-size: variables.$default-font;
     padding: 3px;
-    border-bottom: 1px solid $color-primary;
+    border-bottom: 1px solid variables.$color-primary;
     transition: all 0.2s;
   }
 
   &:hover {
-    background-color: $color-primary;
-    color: $color-grey-light-1;
-    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    background-color: variables.$color-primary;
+    color: variables.$color-grey-light-1;
+    box-shadow: 0 1rem 2rem rgba(variables.$color-black, 0.15);
     transform: translateY(-2px);
   }
 
   &:active {
-    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.15);
+    box-shadow: 0 0.5rem 1rem rgba(variables.$color-black, 0.15);
     transform: translateY(0);
   }
 }

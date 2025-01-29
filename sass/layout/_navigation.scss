@@ -1,10 +1,13 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
 .navigation {
   &__checkbox {
     display: none;
   }
 
   &__button {
-    background-color: $color-white;
+    background-color: variables.$color-white;
     height: 7rem;
     width: 7rem;
     border-radius: 50%;
@@ -15,12 +18,12 @@
     text-align: center;
     cursor: pointer;
 
-    @include respond(tab-port) {
+    @include mixins.respond(tab-port) {
       top: 4rem;
       right: 4rem;
     }
 
-    @include respond(phone) {
+    @include mixins.respond(phone) {
       top: 3rem;
       right: 3rem;
     }
@@ -29,20 +32,20 @@
   &__background {
     height: 6rem;
     width: 6rem;
-    box-shadow: 0 1rem 3rem rgba($color-black, 0.15);
+    box-shadow: 0 1rem 3rem rgba(variables.$color-black, 0.15);
     border-radius: 50%;
     position: fixed;
     top: 6.5rem;
     right: 6.5rem;
-    background-image: radial-gradient($color-p-tint-25, $color-p-shades-38);
+    background-image: radial-gradient(variables.$color-p-tint-25, variables.$color-p-shades-38);
     z-index: 10;
     transition: all 0.7s cubic-bezier(0.86, 0, 0.07, 1);
 
-    @include respond(tab-port) {
+    @include mixins.respond(tab-port) {
       top: 4.5rem;
       right: 4.5rem;
     }
-    @include respond(phone) {
+    @include mixins.respond(phone) {
       top: 3.5rem;
       right: 3.5rem;
     }
@@ -80,13 +83,13 @@
       font-size: 3rem;
       font-weight: 300;
       padding: 1rem 2rem;
-      color: $color-white;
+      color: variables.$color-white;
       text-transform: uppercase;
       background-image: linear-gradient(
         120deg,
         transparent 0%,
         transparent 50%,
-        $color-white 50%
+        variables.$color-white 50%
       );
       background-size: 250%;
       transition: all 0.4s;
@@ -100,7 +103,7 @@
     &:hover,
     &:active {
       background-position: 100%;
-      color: $color-primary;
+      color: variables.$color-primary;
       transform: translateX(1rem);
     }
   }
@@ -137,7 +140,7 @@
     &::after {
       width: 3rem;
       height: 2px;
-      background-color: $color-grey-dark-3;
+      background-color: variables.$color-grey-dark-3;
       display: inline-block;
       transition: all 0.2s;
     }

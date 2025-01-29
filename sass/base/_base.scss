@@ -1,3 +1,5 @@
+@use "../abstracts/mixins";
+
 /* Universal Reset */
 *,
 *::before,
@@ -12,26 +14,26 @@ body {
   font-size: 62.5%; // 1 rem = 10px
   box-sizing: border-box;
 
-  @include respond(tab-land) {
+  @include mixins.respond(tab-land) {
     font-size: 56.25%;
   }
 
-  @include respond(tab-port) {
+  @include mixins.respond(tab-port) {
     font-size: 50%;
   }
 
-  @include respond(phone) {
+  @include mixins.respond(phone) {
     font-size: 50%;
   }
 
-  @include respond(big-desktop) {
+  @include mixins.respond(big-desktop) {
     font-size: 75%;
   }
 }
 
 body {
   padding: 2.4rem;
-  @include respond(tab-port) {
+  @include mixins.respond(tab-port) {
     padding: 0;
   }
 }

@@ -1,10 +1,13 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
 .header {
   position: relative;
   height: 95vh;
   background-image: linear-gradient(
       to right bottom,
-      rgba($color-p-tint-12, 0.8),
-      rgba($color-p-shades-50, 0.8)
+      rgba(variables.$color-p-tint-12, 0.8),
+      rgba(variables.$color-p-shades-50, 0.8)
     ),
     url(../img/hero-small.jpg);
   background-size: cover;
@@ -16,13 +19,13 @@
     (min-width: 112.5em) {
     background-image: linear-gradient(
         to right bottom,
-        rgba($color-p-tint-12, 0.8),
-        rgba($color-p-shades-50, 0.8)
+        rgba(variables.$color-p-tint-12, 0.8),
+        rgba(variables.$color-p-shades-50, 0.8)
       ),
       url(../img/hero.jpg);
   }
 
-  @include respond(phone) {
+  @include mixins.respond(phone) {
     clip-path: polygon(0 0, 100% 0, 100% 70vh, 0% 100%);
     height: 75vh;
   }

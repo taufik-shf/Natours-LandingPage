@@ -1,3 +1,6 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
 html,
 body {
   font-family: "Lato", sans-serif;
@@ -5,11 +8,11 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $color-grey-dark;
+  color: variables.$color-grey-dark;
 }
 
 .heading-primary {
-  color: $color-white;
+  color: variables.$color-white;
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 6rem;
@@ -22,7 +25,7 @@ body {
     animation-duration: 1s;
     animation-timing-function: ease-out;
 
-    @include respond(phone) {
+    @include mixins.respond(phone) {
       letter-spacing: 1.2rem;
     }
   }
@@ -33,7 +36,7 @@ body {
     font-weight: 400;
     letter-spacing: 15.6px;
     animation: moveInRight 1s ease-out;
-    @include respond(phone) {
+    @include mixins.respond(phone) {
       letter-spacing: 1rem;
     }
   }
@@ -45,8 +48,8 @@ body {
   font-weight: 700;
   background-image: linear-gradient(
     to right,
-    $color-p-tint-25,
-    $color-p-shades-25
+    variables.$color-p-tint-25,
+    variables.$color-p-shades-25
   );
   background-clip: text;
   -webkit-background-clip: text;
@@ -54,18 +57,18 @@ body {
   letter-spacing: 2px;
   transition: all 0.2s;
 
-  @include respond(tab-port) {
+  @include mixins.respond(tab-port) {
     font-size: 2.7rem;
     letter-spacing: 1px;
   }
 
-  @include respond(phone) {
+  @include mixins.respond(phone) {
     font-size: 2.5rem;
   }
 
   &:hover {
     transform: scale(1.1);
-    text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+    text-shadow: 0.5rem 1rem 2rem rgba(variables.$color-black, 0.2);
   }
 }
 
@@ -76,7 +79,7 @@ body {
 }
 
 .paragraph {
-  font-size: $default-font;
+  font-size: variables.$default-font;
 
   &:not(:last-child) {
     margin-bottom: 3rem;

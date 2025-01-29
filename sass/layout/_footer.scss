@@ -1,15 +1,18 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
 .footer {
-  background-color: $color-grey-dark-3;
+  background-color: variables.$color-grey-dark-3;
   padding: 10rem 0;
   font-size: 1.3rem;
 
-  @include respond(tab-port) {
+  @include mixins.respond(tab-port) {
     padding: 8rem 0;
   }
 
   &__logo-box {
     margin-bottom: 7rem;
-    @include respond(tab-port) {
+    @include mixins.respond(tab-port) {
       margin-bottom: 5.5rem;
     }
   }
@@ -22,11 +25,11 @@
   }
 
   &__navigation {
-    border-top: 1px solid $color-grey-dark;
+    border-top: 1px solid variables.$color-grey-dark;
     display: inline-block;
     padding-top: 1rem;
 
-    @include respond(tab-port) {
+    @include mixins.respond(tab-port) {
       width: 100%;
       text-align: center;
     }
@@ -47,30 +50,30 @@
   &__link {
     &:link,
     &:visited {
-      color: $color-grey-light-1;
+      color: variables.$color-grey-light-1;
       text-transform: uppercase;
       display: inline-block;
       transition: all 0.2s;
-      background-color: $color-grey-dark-3;
+      background-color: variables.$color-grey-dark-3;
     }
 
     &:hover,
     &:active {
-      color: $color-p-tint-38;
-      box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+      color: variables.$color-p-tint-38;
+      box-shadow: 0 1rem 2rem rgba(variables.$color-black, 0.4);
       transform: rotate(-5deg) scale(1.2);
     }
   }
 
   &__copyright {
-    color: $color-grey-light-1;
-    border-top: 1px solid $color-grey-dark;
+    color: variables.$color-grey-light-1;
+    border-top: 1px solid variables.$color-grey-dark;
     padding-top: 1rem;
     float: right;
     text-align: right;
     font-size: 1.3rem;
 
-    @include respond(tab-port) {
+    @include mixins.respond(tab-port) {
       width: 100%;
       float: none;
       text-align: center;

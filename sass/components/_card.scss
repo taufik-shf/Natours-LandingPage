@@ -1,3 +1,6 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
 .card {
   //Functionality
   perspective: 150rem;
@@ -19,10 +22,10 @@
     backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden;
-    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    box-shadow: 0 1.5rem 4rem rgba(variables.$color-black, 0.15);
 
     &--front {
-      background-color: $color-white;
+      background-color: variables.$color-white;
     }
 
     &--back {
@@ -30,22 +33,22 @@
       &-1 {
         background-image: linear-gradient(
           to right bottom,
-          $color-p-tint-25,
-          $color-p-shades-25
+          variables.$color-p-tint-25,
+          variables.$color-p-shades-25
         );
       }
       &-3 {
         background-image: linear-gradient(
           to right bottom,
-          $color-secondary-light,
-          $color-secondary
+          variables.$color-secondary-light,
+          variables.$color-secondary
         );
       }
       &-2 {
         background-image: linear-gradient(
           to right bottom,
-          $color-tertiary-light,
-          $color-tertiary
+          variables.$color-tertiary-light,
+          variables.$color-tertiary
         );
       }
     }
@@ -69,8 +72,8 @@
     &--1 {
       background-image: linear-gradient(
           to right bottom,
-          $color-p-tint-25,
-          $color-p-shades-25
+          variables.$color-p-tint-25,
+          variables.$color-p-shades-25
         ),
         url(../img/nat-5.jpg);
     }
@@ -78,8 +81,8 @@
     &--3 {
       background-image: linear-gradient(
           to right bottom,
-          $color-secondary-light,
-          $color-secondary
+          variables.$color-secondary-light,
+          variables.$color-secondary
         ),
         url(../img/nat-7.jpg);
     }
@@ -87,8 +90,8 @@
     &--2 {
       background-image: linear-gradient(
           to right bottom,
-          $color-tertiary-light,
-          $color-tertiary
+          variables.$color-tertiary-light,
+          variables.$color-tertiary
         ),
         url(../img/nat-6.jpg);
     }
@@ -97,7 +100,7 @@
   &__heading {
     font-weight: 500;
     font-size: 2.8rem;
-    color: $color-white;
+    color: variables.$color-white;
     position: absolute;
     text-align: right;
     top: 12rem;
@@ -114,22 +117,22 @@
     &--1 {
       background-image: linear-gradient(
         to right bottom,
-        rgba($color-p-tint-25, 0.9),
-        rgba($color-p-shades-25, 0.9)
+        rgba(variables.$color-p-tint-25, 0.9),
+        rgba(variables.$color-p-shades-25, 0.9)
       );
     }
     &--3 {
       background-image: linear-gradient(
         to right bottom,
-        rgba($color-secondary-light, 0.9),
-        rgba($color-secondary, 0.9)
+        rgba(variables.$color-secondary-light, 0.9),
+        rgba(variables.$color-secondary, 0.9)
       );
     }
     &--2 {
       background-image: linear-gradient(
         to right bottom,
-        rgba($color-tertiary-light, 0.9),
-        rgba($color-tertiary, 0.9)
+        rgba(variables.$color-tertiary-light, 0.9),
+        rgba(variables.$color-tertiary, 0.9)
       );
     }
   }
@@ -146,7 +149,7 @@
         padding: 1rem;
 
         &:not(:last-child) {
-          border-bottom: 1px solid $color-grey-light-2;
+          border-bottom: 1px solid variables.$color-grey-light-2;
         }
       }
     }
@@ -165,7 +168,7 @@
 
   &__price-box {
     margin-bottom: 8rem;
-    color: $color-white;
+    color: variables.$color-white;
   }
 
   &__price-only {
@@ -178,11 +181,11 @@
     font-weight: 200;
   }
 
-  @include respond(tab-port) {
+  @include mixins.respond(tab-port) {
     height: auto;
     border-radius: 3px;
-    background-color: $color-white;
-    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.25);
+    background-color: variables.$color-white;
+    box-shadow: 0 1.5rem 4rem rgba(variables.$color-black, 0.25);
 
     &__side {
       height: auto;
