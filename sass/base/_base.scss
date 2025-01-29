@@ -1,4 +1,5 @@
 @use "../abstracts/mixins";
+@use "../abstracts/variables" as *;
 
 /* Universal Reset */
 *,
@@ -36,6 +37,11 @@ body {
   @include mixins.respond(tab-port) {
     padding: 0;
   }
+}
+
+::selection {
+  background-color: $color-p-tint-25;
+  color: $color-white;
 }
 
 img,

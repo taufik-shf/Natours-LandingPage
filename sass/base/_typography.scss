@@ -76,6 +76,10 @@ body {
   font-size: 1.8rem;
   font-weight: 700;
   text-transform: uppercase;
+
+  @include mixins.respond(tab-land) {
+    font-size: 1.6rem;
+  }
 }
 
 .paragraph {
