@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "Landing page for natours",
   "devDependencies": {
+    "concat": "^1.0.3",
     "sass": "^1.83.4"
   }
 }

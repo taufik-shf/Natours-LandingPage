@@ -8,16 +8,32 @@
 
 .u-mb-s {
   margin-bottom: 2rem !important;
+
+  @include respond(tab-port) {
+    margin-bottom: 1.5rem !important;
+  }
 }
 
 .u-mb-m {
   margin-bottom: 4rem !important;
+
+  @include respond(tab-port) {
+    margin-bottom: 3rem !important;
+  }
 }
 
 .u-mb-l {
   margin-bottom: 8rem !important;
+
+  @include respond(tab-port) {
+    margin-bottom: 5rem !important;
+  }
 }
 
 .u-mt-xl {
   margin-top: 10rem !important;
+
+  @include respond(tab-port) {
+    margin-top: 5rem !important;
+  }
 }
