@@ -4,12 +4,30 @@
 .header {
   position: relative;
   height: 95vh;
+  // Fallback first
   background-image: linear-gradient(
       to right bottom,
       rgba(variables.$color-p-tint-12, 0.8),
       rgba(variables.$color-p-shades-50, 0.8)
     ),
-    url(../img/hero-small.jpg);
+    url("../img/hero-small.jpg");
+  // Modern Browsers
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(variables.$color-p-tint-12, 0.8),
+      rgba(variables.$color-p-shades-50, 0.8)
+    ),
+    -webkit-image-set(url(../img/hero-small.webp) type("image/webp") 1x, url(../img/hero-small.jpg)
+          type("image/jpeg") 1x);
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(variables.$color-p-tint-12, 0.8),
+      rgba(variables.$color-p-shades-50, 0.8)
+    ),
+    image-set(
+      url(../img/hero-small.webp) type("image/webp"),
+      url(../img/hero-small.jpg) type("image/jpeg")
+    );
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
@@ -17,12 +35,23 @@
   @media (min-resolution: 192dpi) and (min-width: 37.5em),
     (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
     (min-width: 112.5em) {
+    // Fallback
     background-image: linear-gradient(
         to right bottom,
         rgba(variables.$color-p-tint-12, 0.8),
         rgba(variables.$color-p-shades-50, 0.8)
       ),
-      url(../img/hero.jpg);
+      url("../img/hero.jpg");
+    // Modern Browsers
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(variables.$color-p-tint-12, 0.8),
+        rgba(variables.$color-p-shades-50, 0.8)
+      ),
+      image-set(
+        url(../img/hero.webp) type("image/webp"),
+        url(../img/hero.jpg) type("image/jpeg")
+      );
   }
 
   @include mixins.respond(phone) {

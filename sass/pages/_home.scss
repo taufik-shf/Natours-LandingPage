@@ -64,6 +64,7 @@
 }
 
 .book {
+  // Fallback
   background-image: linear-gradient(
       105deg,
       rgba(variables.$color-white, 0.9) 0%,
@@ -71,11 +72,23 @@
       transparent 50%
     ),
     url(../img/nat-10.jpg);
+  // Modern Browsers
+  background-image: linear-gradient(
+      105deg,
+      rgba(variables.$color-white, 0.9) 0%,
+      rgba(variables.$color-white, 0.9) 50%,
+      transparent 50%
+    ),
+    image-set(
+      url(../img/nat-10.webp) type("image/webp"),
+      url(../img/nat-10.jpg) type("image/jpeg")
+    );
   background-size: 100%;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(variables.$color-black, 0.2);
 
   @include mixins.respond(tab-land) {
+    // Fallback
     background-image: linear-gradient(
         105deg,
         rgba(variables.$color-white, 0.9) 0%,
@@ -83,17 +96,40 @@
         transparent 65%
       ),
       url(../img/nat-10.jpg);
+    // Modern Browsers
+    background-image: linear-gradient(
+        105deg,
+        rgba(variables.$color-white, 0.9) 0%,
+        rgba(variables.$color-white, 0.9) 65%,
+        transparent 65%
+      ),
+      image-set(
+        url(../img/nat-10.webp) type("image/webp"),
+        url(../img/nat-10.jpg) type("image/jpeg")
+      );
     background-size: cover;
   }
 
   @include mixins.respond(tab-port) {
+    // Fallback
     background-image: linear-gradient(
         105deg,
         rgba(variables.$color-white, 0.9) 0%,
         rgba(variables.$color-white, 0.9) 100%
       ),
       url(../img/nat-10.jpg);
+    // Modern Browsers
+    background-image: linear-gradient(
+        105deg,
+        rgba(variables.$color-white, 0.9) 0%,
+        rgba(variables.$color-white, 0.9) 100%
+      ),
+      image-set(
+        url(../img/nat-10.webp) type("image/webp"),
+        url(../img/nat-10.jpg) type("image/jpeg")
+      );
   }
+
   &__form {
     width: 50%;
     padding: 6rem;

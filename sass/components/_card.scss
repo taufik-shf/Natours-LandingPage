@@ -70,30 +70,63 @@
     clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
 
     &--1 {
+      // Fallback
       background-image: linear-gradient(
           to right bottom,
           variables.$color-p-tint-25,
           variables.$color-p-shades-25
         ),
         url(../img/nat-5.jpg);
+      // Modern Browsers
+      background-image: linear-gradient(
+          to right bottom,
+          variables.$color-p-tint-25,
+          variables.$color-p-shades-25
+        ),
+        image-set(
+          url(../img/nat-5.webp) type("image/webp"),
+          url(../img/nat-5.jpg) type("image/jpeg")
+        );
     }
 
     &--3 {
+      // Fallback
       background-image: linear-gradient(
           to right bottom,
           variables.$color-secondary-light,
           variables.$color-secondary
         ),
         url(../img/nat-7.jpg);
+      // Modern Browsers
+      background-image: linear-gradient(
+          to right bottom,
+          variables.$color-secondary-light,
+          variables.$color-secondary
+        ),
+        image-set(
+          url(../img/nat-7.webp) type("image/webp"),
+          url(../img/nat-7jpg) type("image/jpeg")
+        );
     }
 
     &--2 {
+      // Fallback
       background-image: linear-gradient(
           to right bottom,
           variables.$color-tertiary-light,
           variables.$color-tertiary
         ),
         url(../img/nat-6.jpg);
+      // Modern Browsers
+      background-image: linear-gradient(
+          to right bottom,
+          variables.$color-tertiary,
+          variables.$color-tertiary-light
+        ),
+        image-set(
+          url(../img/nat-6.webp) type("image/webp"),
+          url(../img/nat-6jpg) type("image/jpeg")
+        );
     }
   }
 

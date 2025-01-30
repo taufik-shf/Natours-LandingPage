@@ -4,15 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/icon-font.css" />
+
+    <!-- Social Meta Tags -->
+    <meta
+      property="og:title"
+      content="Natours - Tours for adventurous people"
+    />
+    <meta
+      property="og:description"
+      content="Discover exhilarating adventures with Natours! Explore our exclusive tour packages designed for thrill-seekers and nature enthusiasts."
+    />
+    <meta property="og:image" content="img/logo-white.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- <link rel="stylesheet" href="css/icon-font.css" /> -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" href="img/favicon.png" type="image/png" />
+
     <title>Natours &mdash;Tours for adventurous people</title>
     <meta
       name="description"
@@ -20,21 +36,26 @@
     />
   </head>
   <body>
-    <div class="navigation">
-      <input type="checkbox" class="navigation__checkbox" id="nav-toggle" />
-      <label for="nav-toggle" class="navigation__button"
-        ><span class="navigation__icon">&nbsp;</span></label
+    <nav class="navigation" aria-label="Main navigation">
+      <input
+        type="checkbox"
+        class="navigation__checkbox"
+        id="nav-toggle"
+        aria-label="Toggle navigation menu"
+      />
+      <label for="nav-toggle" class="navigation__button" aria-expanded="false"
+        ><span class="navigation__icon" aria-hidden="true">&nbsp;</span></label
       >
-      <div class="navigation__background">&nbsp;</div>
+      <div class="navigation__background" aria-hidden="true">&nbsp;</div>
       <nav class="navigation__nav">
         <ul class="navigation__list">
           <li class="navigation__item">
-            <a href="#" class="navigation__link"
+            <a href="#section-about" class="navigation__link"
               ><span>01</span> About Natour</a
             >
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link"
+            <a href="#section-features" class="navigation__link"
               ><span>02</span> Your Benefits</a
             >
           </li>
@@ -44,15 +65,19 @@
             >
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link"><span>04</span> Stories</a>
+            <a href="#section-stories" class="navigation__link"
+              ><span>04</span> Stories</a
+            >
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link"><span>05</span> Book Now</a>
+            <a href="#section-book" class="navigation__link"
+              ><span>05</span> Book Now</a
+            >
           </li>
         </ul>
       </nav>
-    </div>
-    <header class="header">
+    </nav>
+    <header class="header" role="banner">
       <figure class="header__logo-box">
         <img src="img/logo-white.png" alt="logo" class="header__logo" />
       </figure>
@@ -61,13 +86,19 @@
           <span class="heading-primary--main">Outdoors</span>
           <span class="heading-primary--sub">is where life happens</span>
         </h1>
-        <a href="#" class="btn btn--white btn--animated">Discover tours</a>
+        <a href="#" class="btn btn--white btn--animated" role="button"
+          >Discover tours</a
+        >
       </div>
     </header>
-    <main>
-      <section class="section-about">
+    <main id="main-content" role="main">
+      <section
+        class="section-about"
+        id="section-about"
+        aria-labelledby="about-heading"
+      >
         <div class="u-center-text">
-          <h2 class="heading-secondary u-mb-l">
+          <h2 class="heading-secondary u-mb-l" id="about-heading">
             Exciting tours for adventurous people
           </h2>
         </div>
@@ -92,50 +123,103 @@
             <a href="#" class="btn-text">Learn more &rarr;</a>
           </div>
           <div class="col-1-of-2">
-            <div class="composition">
-              <img
-                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
-                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
-                alt="Photo 1"
-                src="img/nat-1-large.jpg"
-                class="composition__photo composition__photo--p1"
-              />
-              <img
-                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
-                sizes="(max-width: 56.25em) 20vw, (max-width:37.5em) 30vw, 300px"
-                alt="Photo 2"
-                src="img/nat-2-large.jpg"
-                class="composition__photo composition__photo--p2"
-              />
-              <img
-                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
-                sizes="(max-width: 56.25em) 20vw, (max-width:37.5em) 30vw, 300px"
-                alt="Photo 3"
-                src="img/nat-3-large.jpg"
-                class="composition__photo composition__photo--p3"
-              />
-              <!-- <img
-                src="img/nat-1-large.jpg "
-                alt="Photo 1"
-                class="composition__photo composition__photo--p1"
-              /><img
-                src="img/nat-2-large.jpg"
-                alt="Photo 2"
-                class="composition__photo composition__photo--p2"
-              /><img
-                src="img/nat-3-large.jpg"
-                alt="Photo 3"
-                class="composition__photo composition__photo--p3"
-              /> -->
+            <div
+              class="composition"
+              role="group"
+              aria-label="In Nature photo collections"
+            >
+              <picture class="composition__photo composition__photo--p1">
+                <!-- WebP versions with resolution switching -->
+                <source
+                  type="image/webp"
+                  srcset="img/nat-1.webp 300w, img/nat-1-large.webp 1000w"
+                  sizes="(max-width: 37.5em) 30vw,
+                       (max-width: 56.25em) 20vw,
+                       300px"
+                />
+
+                <!-- JPEG fallback with resolution switching -->
+                <source
+                  type="image/jpeg"
+                  srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                  sizes="(max-width: 37.5em) 30vw,
+                       (max-width: 56.25em) 20vw,
+                       300px"
+                />
+
+                <!-- Ultimate fallback -->
+                <img
+                  src="img/nat-1-large.jpg"
+                  alt="Mountain landscape with green trees"
+                />
+              </picture>
+              <picture class="composition__photo composition__photo--p2">
+                <!-- WebP versions with resolution switching -->
+                <source
+                  type="image/webp"
+                  srcset="img/nat-2.webp 300w, img/nat-2-large.webp 1000w"
+                  sizes="(max-width: 37.5em) 30vw,
+                       (max-width: 56.25em) 20vw,
+                       300px"
+                />
+
+                <!-- JPEG fallback with resolution switching -->
+                <source
+                  type="image/jpeg"
+                  srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                  sizes="(max-width: 37.5em) 30vw,
+                       (max-width: 56.25em) 20vw,
+                       300px"
+                />
+
+                <!-- Ultimate fallback -->
+                <img
+                  src="img/nat-2-large.jpg"
+                  alt="A man ride a bike in on the road with a beatiful landscape"
+                />
+              </picture>
+
+              <picture class="composition__photo composition__photo--p3">
+                <!-- WebP versions with resolution switching -->
+                <source
+                  type="image/webp"
+                  srcset="img/nat-3.webp 300w, img/nat-3-large.webp 1000w"
+                  sizes="(max-width: 37.5em) 30vw,
+                       (max-width: 56.25em) 20vw,
+                       300px"
+                />
+
+                <!-- JPEG fallback with resolution switching -->
+                <source
+                  type="image/jpeg"
+                  srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                  sizes="(max-width: 37.5em) 30vw,
+                       (max-width: 56.25em) 20vw,
+                       300px"
+                />
+
+                <!-- Ultimate fallback -->
+                <img
+                  src="img/nat-3-large.jpg"
+                  alt="A woman walking on the edge of a greenery hill at sunrise"
+                />
+              </picture>
             </div>
           </div>
         </div>
       </section>
-      <section class="section-features">
-        <div class="row">
+      <section
+        class="section-features"
+        aria-labelledby="features-heading"
+        id="section-features"
+      >
+        <article class="row">
           <div class="col-1-of-4">
             <div class="feature-box">
-              <i class="icon-basic-world feature-box__icon"></i>
+              <i
+                class="icon-basic-world feature-box__icon"
+                aria-hidden="true"
+              ></i>
               <h3 class="heading-tertiary u-mb-xs">Explore the world</h3>
               <p class="feature-box__text">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -145,7 +229,10 @@
           </div>
           <div class="col-1-of-4">
             <div class="feature-box">
-              <i class="icon-basic-compass feature-box__icon"></i>
+              <i
+                class="icon-basic-compass feature-box__icon"
+                aria-hidden="true"
+              ></i>
               <h3 class="heading-tertiary u-mb-xs">Meet Nature</h3>
               <p class="feature-box__text">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -155,7 +242,10 @@
           </div>
           <div class="col-1-of-4">
             <div class="feature-box">
-              <i class="icon-basic-map feature-box__icon"></i>
+              <i
+                class="icon-basic-map feature-box__icon"
+                aria-hidden="true"
+              ></i>
               <h3 class="heading-tertiary u-mb-xs">Find your way</h3>
               <p class="feature-box__text">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -165,7 +255,10 @@
           </div>
           <div class="col-1-of-4">
             <div class="feature-box">
-              <i class="icon-basic-heart feature-box__icon"></i>
+              <i
+                class="icon-basic-heart feature-box__icon"
+                aria-hidden="true"
+              ></i>
               <h3 class="heading-tertiary u-mb-xs">Healthier Live</h3>
               <p class="feature-box__text">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -173,19 +266,23 @@
               </p>
             </div>
           </div>
-        </div>
+        </article>
       </section>
-      <section class="section-tours" id="section-tours">
+      <section
+        class="section-tours"
+        id="section-tours"
+        aria-labelledby="tours-heading"
+      >
         <div class="u-center-text">
           <h2 class="heading-secondary u-mb-l">Most Popular Tours</h2>
         </div>
         <div class="row">
           <!-- CARD 1 -->
           <div class="col-1-of-3">
-            <div class="card">
+            <div class="card" role="article" aria-labelledby="card1-heading">
               <div class="card__side card__side--front">
                 <div class="card__picture card__picture--1">&nbsp;</div>
-                <h3 class="card__heading">
+                <h3 class="card__heading" id="card1-heading">
                   <span class="card__heading-span card__heading-span--1"
                     >The Sea Explorer</span
                   >
@@ -213,10 +310,10 @@
           </div>
           <!-- CARD 2 -->
           <div class="col-1-of-3">
-            <div class="card">
+            <div class="card" role="article" aria-labelledby="card2-heading">
               <div class="card__side card__side--front">
                 <div class="card__picture card__picture--2">&nbsp;</div>
-                <h3 class="card__heading">
+                <h3 class="card__heading" id="card2-heading">
                   <span class="card__heading-span card__heading-span--2"
                     >The Forest Hiker</span
                   >
@@ -244,10 +341,10 @@
           </div>
           <!-- CARD 3 -->
           <div class="col-1-of-3">
-            <div class="card">
+            <div class="card" role="article" aria-labelledby="card3-heading">
               <div class="card__side card__side--front">
                 <div class="card__picture card__picture--3">&nbsp;</div>
-                <h3 class="card__heading">
+                <h3 class="card__heading" id="card3-heading">
                   <span class="card__heading-span card__heading-span--3"
                     >The Snow Adventurer</span
                   >
@@ -278,7 +375,11 @@
           <a href="#" class="btn btn--blue">Discover all tours</a>
         </div>
       </section>
-      <section class="section-stories">
+      <section
+        class="section-stories"
+        id="section-stories"
+        aria-labelledby="story from customers"
+      >
         <div class="bg-video">
           <video
             class="bg-video__content"
@@ -288,8 +389,8 @@
             playsinline
             loading="lazy"
           >
-            <source src="img/video.mp4" type="video/mp4" />
             <source src="img/video.webm" type="video/webm" />
+            <source src="img/video.mp4" type="video/mp4" />
             Your browser is not supported!
           </video>
         </div>
@@ -298,14 +399,18 @@
             We make people genuinely happy
           </h2>
         </div>
-        <div class="row">
+        <article class="row">
           <div class="story u-mb-m">
             <figure class="story__shape">
-              <img
-                src="img/nat-8.jpg"
-                alt="Person on a tour"
-                class="story__img"
-              />
+              <picture class="story__img">
+                <source type="image/webp" srcset="img/nat-8-small.webp" />
+                <source type="image/jpeg" srcset="img/nat-8-small.jpg" />
+                <img
+                  src="img/nat-8-small.jpg"
+                  alt="Person named Marry Smith on a boat during tour"
+                  loading="lazy"
+                />
+              </picture>
               <figcaption class="story__caption">Marry Smith</figcaption>
             </figure>
             <div class="story__text">
@@ -323,11 +428,15 @@
           </div>
           <div class="story">
             <figure class="story__shape">
-              <img
-                src="img/nat-9.jpg"
-                alt="Person on a tour"
-                class="story__img"
-              />
+              <picture class="story__img">
+                <source type="image/webp" srcset="img/nat-9-small.webp" />
+                <source type="image/jpeg" srcset="img/nat-9-small.jpg" />
+                <img
+                  src="img/nat-8-small.jpg"
+                  alt="Person named Jack Wilson on top of a mountain"
+                  loading="lazy"
+                />
+              </picture>
               <figcaption class="story__caption">Jack Wilson</figcaption>
             </figure>
             <div class="story__text">
@@ -346,13 +455,17 @@
           <div class="u-center-text u-mt-xl">
             <a href="#" class="btn-text">Read all stories &rarr;</a>
           </div>
-        </div>
+        </article>
       </section>
-      <section class="section-book">
+      <section
+        class="section-book"
+        id="section-book"
+        aria-labelledby="booking-heading"
+      >
         <div class="row">
           <div class="book">
             <div class="book__form">
-              <form action="#" class="form">
+              <form action="#" class="form" method="post">
                 <div class="u-mb-m">
                   <h2 class="heading-secondary">Start booking now</h2>
                 </div>
@@ -361,6 +474,7 @@
                     type="text"
                     class="form__input"
                     placeholder="Full name"
+                    autocomplete="name"
                     required
                     id="fullname"
                   />
@@ -385,7 +499,9 @@
                       name="tour-size"
                     />
                     <label for="small" class="form__radio-label">
-                      <span class="form__radio-btn">&nbsp;</span>
+                      <span class="form__radio-btn" aria-hidden="true"
+                        >&nbsp;</span
+                      >
                       Small tour group</label
                     >
                   </div>
@@ -397,8 +513,9 @@
                       name="tour-size"
                     />
                     <label for="large" class="form__radio-label"
-                      ><span class="form__radio-btn">&nbsp;</span>Large tour
-                      group</label
+                      ><span class="form__radio-btn" aria-hidden="true"
+                        >&nbsp;</span
+                      >Large tour group</label
                     >
                   </div>
                 </div>
@@ -411,7 +528,7 @@
         </div>
       </section>
     </main>
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
       <div class="footer__logo-box">
         <picture class="footer__logo">
           <source
@@ -464,11 +581,19 @@
         </div>
       </div>
     </footer>
-    <div class="popup" id="popup">
+    <div class="popup" id="popup" role="dialog" aria-modal="true">
       <div class="popup__content">
         <div class="popup__left">
-          <img src="img/nat-8.jpg" alt="Tour Photo" class="popup__img" />
-          <img src="img/nat-9.jpg" alt="Tour Photo" class="popup__img" />
+          <picture>
+            <source type="image/webp" srcset="img/nat-8.webp" />
+            <source type="image/jpeg" srcset="img/nat-8.jpg" />
+            <img src="img/nat-8.jpg" alt="Tour Photo" class="popup__img" />
+          </picture>
+          <picture>
+            <source type="image/webp" srcset="img/nat-9.webp" />
+            <source type="image/jpeg" srcset="img/nat-9.jpg" />
+            <img src="img/nat-9.jpg" alt="Tour Photo" class="popup__img" />
+          </picture>
         </div>
         <div class="popup__right">
           <a href="#section-tours" class="popup__close">&times;</a>
